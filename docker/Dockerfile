@@ -4,7 +4,8 @@ MAINTAINER Yury Antonov <yantonov@yandex.ru>
 
 RUN apt-get update && apt-get install -y \
     curl \
-    bzip2
+    bzip2 \
+    psmisc
 
 ENV ANACONDA_VERSION 2019.03
 ENV ANACONDA_MD5 43caea3d726779843f130a7fb2d380a2
