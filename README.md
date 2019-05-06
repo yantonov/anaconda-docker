@@ -1,11 +1,10 @@
 Anaconda docker image
 
-There were some periodic problems with official docker images, that is why current repository was created.
+There were some periodic problems with official (continuuumIO) docker images, that is why current repository was created.
 
 Docker file provides 
 1. ubuntu 16.04
-2. python 3.7.3
-3. anaconda 2019.03
+2. anaconda 2019.03
 
 Links:
 1. [anaconda](https://anaconda.org/anaconda/python)
