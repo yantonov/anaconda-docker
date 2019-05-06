@@ -40,6 +40,9 @@ RUN \
     echo ". ${ANACONDA_HOME}/etc/profile.d/conda.sh" >> /home/${MY_USER}/.bashrc && \
     echo "conda activate base" >> /home/${MY_USER}/.bashrc
 
+RUN pip install --upgrade pip && \
+    conda update conda -y
+
 ENV \
     # TODO: think about using ${ANACONDA_HOME}/etc/profile.d/conda.sh
     PATH=${ANACONDA_HOME}/bin:${PATH}
