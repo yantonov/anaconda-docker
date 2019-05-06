@@ -36,16 +36,14 @@ RUN \
     echo "${ANACONDA_MD5}  anaconda.sh" > anaconda.md5 && \
     if [ $(md5sum -c anaconda.md5 | awk '{print $2}') != "OK" ] ; then exit 1; fi && \
     sh ./anaconda.sh -b -p ${ANACONDA_HOME} && \
-    rm anaconda.sh anaconda.md5 && \
-    echo ". ${ANACONDA_HOME}/etc/profile.d/conda.sh" >> /home/${MY_USER}/.bashrc && \
-    echo "conda activate base" >> /home/${MY_USER}/.bashrc
-
-RUN pip install --upgrade pip && \
-    conda update conda -y
+    rm anaconda.sh anaconda.md5
 
 ENV \
     # TODO: think about using ${ANACONDA_HOME}/etc/profile.d/conda.sh
     PATH=${ANACONDA_HOME}/bin:${PATH}
+
+RUN pip install --upgrade pip && \
+    conda update conda -y
 
 ADD files/init-jupiter.sh /home/${MY_USER}
 ADD files/init.sh /home/${MY_USER}
