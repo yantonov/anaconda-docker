@@ -44,4 +44,9 @@ ENV \
     # TODO: think about using ${ANACONDA_HOME}/etc/profile.d/conda.sh
     PATH=${ANACONDA_HOME}/bin:${PATH}
 
-CMD [ "/bin/bash" ]
+ADD files/init-jupiter.sh /home/${MY_USER}
+ADD files/init.sh /home/${MY_USER}
+
+WORKDIR /home/${MY_USER}
+
+ENTRYPOINT [ "./init.sh" ]
