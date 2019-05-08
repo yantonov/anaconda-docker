@@ -13,9 +13,10 @@ ENV \
     ANACONDA_PYTHON_VERSION=3
 
 RUN apt-get update && apt-get install -y \
+    # required to download anaconda distribution
     curl \
-    bzip2 \
-    psmisc
+    # required to extract anaconda distribution
+    bzip2
 
 RUN useradd -m -s /bin/bash -u ${MY_UID} ${MY_USER}
 
@@ -24,7 +25,7 @@ RUN \
     mkdir -p /src && \
     # /opt - conda target dir
     mkdir -p /opt && \
-    # ajust permissions
+    # adjust permissions
     chown -R ${MY_USER}:${MY_USER} /opt && \
     chown -R ${MY_USER}:${MY_USER} /src
 

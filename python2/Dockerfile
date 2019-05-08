@@ -13,9 +13,10 @@ ENV \
     ANACONDA_PYTHON_VERSION=2
 
 RUN apt-get update && apt-get install -y \
+    # required to download anaconda distribution
     curl \
+    # required to extract anaconda distribution
     bzip2
-
 
 RUN useradd -m -s /bin/bash -u ${MY_UID} ${MY_USER}
 
