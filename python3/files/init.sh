@@ -2,7 +2,7 @@
 
 echo 'init'
 
-. ./init-jupiter.sh
+. /root/init-jupiter.sh
 
 echo "execute $@"
 $@

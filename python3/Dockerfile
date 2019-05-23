@@ -40,4 +40,4 @@ ADD files/init.sh /root
 
 WORKDIR /src
 
-ENTRYPOINT [ "./init.sh" ]
+ENTRYPOINT [ "/root/init.sh" ]
