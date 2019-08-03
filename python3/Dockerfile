@@ -4,8 +4,8 @@ MAINTAINER Yury Antonov <yantonov@yandex.ru>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
-    ANACONDA_VERSION=2019.03 \
-    ANACONDA_MD5=43caea3d726779843f130a7fb2d380a2 \
+    ANACONDA_VERSION=2019.07 \
+    ANACONDA_MD5=ec6a6bf96d75274c2176223e8584d2da \
     ANACONDA_PYTHON_VERSION=3
 
 RUN apt-get update && apt-get install -y \
