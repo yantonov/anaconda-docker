@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER Yury Antonov <yantonov@yandex.ru>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
-    ANACONDA_VERSION=2019.07 \
-    ANACONDA_MD5=63f63df5ffedf3dbbe8bbf3f56897e07 \
+    ANACONDA_VERSION=2019.10 \
+    ANACONDA_MD5=69c64167b8cf3a8fc6b50d12d8476337 \
     ANACONDA_PYTHON_VERSION=2
 
 RUN apt-get update && apt-get install -y \
