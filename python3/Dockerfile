@@ -8,11 +8,13 @@ ENV \
     ANACONDA_MD5=17600d1f12b2b047b62763221f29f2bc \
     ANACONDA_PYTHON_VERSION=3
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     # required to download anaconda distribution
     curl \
     # required to extract anaconda distribution
-    bzip2
+    bzip2 && \
+    apt-get clean
 
 RUN \
     # /src - to mount sources
@@ -22,7 +24,7 @@ RUN \
 
 RUN \
     cd /opt && \
-    curl -s https://repo.continuum.io/archive/Anaconda${ANACONDA_PYTHON_VERSION}-$ANACONDA_VERSION-Linux-x86_64.sh -o anaconda.sh && \
+    curl -s https://repo.continuum.io/archive/Anaconda${ANACONDA_PYTHON_VERSION}-${ANACONDA_VERSION}-Linux-x86_64.sh -o anaconda.sh && \
     echo "${ANACONDA_MD5}  anaconda.sh" > anaconda.md5 && \
     if [ $(md5sum -c anaconda.md5 | awk '{print $2}') != "OK" ] ; then exit 1; fi && \
     sh ./anaconda.sh -b -p ${ANACONDA_HOME} && \

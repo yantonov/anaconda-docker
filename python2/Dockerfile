@@ -8,11 +8,13 @@ ENV \
     ANACONDA_MD5=69c64167b8cf3a8fc6b50d12d8476337 \
     ANACONDA_PYTHON_VERSION=2
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     # required to download anaconda distribution
     curl \
     # required to extract anaconda distribution
-    bzip2
+    bzip2 && \
+    apt-get clean
 
 RUN \
     # /src - to mount sources
