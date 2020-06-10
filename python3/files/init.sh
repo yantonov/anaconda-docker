@@ -5,4 +5,4 @@ echo 'init'
 . /root/init-jupiter.sh
 
 echo "execute $@"
-$@
+exec $@
