@@ -24,9 +24,9 @@ RUN \
 
 RUN \
     cd /opt && \
-    curl -s https://repo.continuum.io/archive/Anaconda${ANACONDA_PYTHON_VERSION}-${ANACONDA_VERSION}-Linux-x86_64.sh -o anaconda.sh && \
+    curl -s -L https://repo.continuum.io/archive/Anaconda${ANACONDA_PYTHON_VERSION}-${ANACONDA_VERSION}-Linux-x86_64.sh -o anaconda.sh && \
     echo "${ANACONDA_MD5}  anaconda.sh" > anaconda.md5 && \
-    if [ $(md5sum -c anaconda.md5 | awk '{print $2}') != "OK" ] ; then exit 1; fi && \
+    if [ $(md5sum -c anaconda.md5 | awk '{print $2}') != "OK" ] ; then echo 'invalid md5 sum'; ls -la; exit 1; fi && \
     sh ./anaconda.sh -b -p ${ANACONDA_HOME} && \
     rm anaconda.sh anaconda.md5
 
