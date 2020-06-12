@@ -37,7 +37,7 @@ ENV \
 RUN pip install --upgrade pip && \
     conda update conda -y
 
-ADD files/* /root
+ADD files/* /root/
 
 WORKDIR /src
 
