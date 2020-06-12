@@ -37,8 +37,7 @@ ENV \
 RUN pip install --upgrade pip && \
     conda update conda -y
 
-ADD files/init-jupiter.sh /root
-ADD files/init.sh /root
+ADD files/* /root
 
 WORKDIR /src
 
