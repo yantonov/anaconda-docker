@@ -5,10 +5,11 @@ DOCKER_FILE=Dockerfile
 SRC?=$(shell pwd)
 
 IMAGE=yantonov/anaconda3
+TAG=2020.02
 
 build:
 	docker build \
-		-t $(IMAGE) \
+		-t $(IMAGE):$(TAG) \
 		-f $(DOCKER_FILE) .
 
 ssh:
