@@ -4,7 +4,7 @@ There were some periodic problems with official (continuuumIO) docker images, th
 
 Docker file provides 
 1. ubuntu 18.04
-2. [anaconda](https://anaconda.org/anaconda/python) 2020.02
+2. [anaconda](https://www.anaconda.com/products/individual) (check docker [file](https://github.com/yantonov/anaconda-docker/blob/master/python3/Dockerfile) to get anaconda version)
 
 Links:
 1. [docker images repository](https://github.com/ContinuumIO/docker-images)
