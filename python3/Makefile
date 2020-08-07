@@ -6,20 +6,21 @@ SRC?=$(shell pwd)
 
 IMAGE=yantonov/anaconda3
 TAG=2020.02
+FQN_IMAGE="$(IMAGE):$(TAG)"
 
 build:
 	docker build \
-		-t $(IMAGE):$(TAG) \
-		-f $(DOCKER_FILE) .
+		-t "$(FQN_IMAGE)" \
+		-f "$(DOCKER_FILE)" .
 
 ssh:
-	docker run --rm -u 0 -t -i "$(IMAGE)" bash
+	docker run --rm -u 0 -t -i "$(FQN_IMAGE)" bash
 
 stop:
-	docker stop "$(shell docker ps -a --filter "ancestor=$(IMAGE)" --format '{{.ID}}' | head -n 1 || echo "")"
+	docker stop "$(shell docker ps -a --filter "ancestor=$(FQN_IMAGE)" --format '{{.ID}}' | head -n 1 || echo "")"
 
 pull:
-	docker pull "$(IMAGE)"
+	docker pull "$(FQN_IMAGE)"
 
 uninstall:
-	docker image rm "$(IMAGE)"
+	docker image rm "$(FQN_IMAGE)"
