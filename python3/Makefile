@@ -5,7 +5,7 @@ DOCKER_FILE=Dockerfile
 SRC?=$(shell pwd)
 
 IMAGE=yantonov/anaconda3
-TAG=2020.02
+TAG=2020.07
 FQN_IMAGE="$(IMAGE):$(TAG)"
 
 build:
