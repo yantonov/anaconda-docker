@@ -22,5 +22,8 @@ stop:
 pull:
 	docker pull "$(FQN_IMAGE)"
 
+push:
+	docker push "$(FQN_IMAGE)"
+
 uninstall:
 	docker image rm "$(FQN_IMAGE)"
