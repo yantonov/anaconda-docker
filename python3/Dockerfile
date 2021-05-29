@@ -4,8 +4,8 @@ MAINTAINER Yury Antonov <yantonov@yandex.ru>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
-    ANACONDA_VERSION=2020.11 \
-    ANACONDA_MD5=4cd48ef23a075e8555a8b6d0a8c4bae2 \
+    ANACONDA_VERSION=2021.05 \
+    ANACONDA_MD5=25e3ebae8905450ddac0f5c93f89c467 \
     ANACONDA_PYTHON_VERSION=3
 
 RUN apt-get update && \
