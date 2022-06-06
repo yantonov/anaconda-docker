@@ -34,3 +34,4 @@ Docker file provides
 Links:
 1. ContinuumIO [repository](https://github.com/ContinuumIO/docker-images) which contains docker images
 2. ContinuumIO at [docker hub](https://hub.docker.com/u/continuumio/)
+3. Anaconda [archive](https://repo.anaconda.com/archive/)
