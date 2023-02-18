@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
-MAINTAINER Yury Antonov <yantonov@yandex.ru>
+MAINTAINER Yury Antonov <yantonov@fastmail.com>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
-    ANACONDA_VERSION=2022.05 \
-    ANACONDA_MD5=a01150aff48fcb6fcd6472381652de04 \
+    ANACONDA_VERSION=2022.10 \
+    ANACONDA_SHA256=e7ecbccbc197ebd7e1f211c59df2e37bc6959d081f2235d387e08c9026666acd \
     ANACONDA_PYTHON_VERSION=3
 
 RUN apt-get update && \
@@ -25,10 +25,11 @@ RUN \
 RUN \
     cd /opt && \
     curl -s -L https://repo.continuum.io/archive/Anaconda${ANACONDA_PYTHON_VERSION}-${ANACONDA_VERSION}-Linux-x86_64.sh -o anaconda.sh && \
-    echo "${ANACONDA_MD5}  anaconda.sh" > anaconda.md5 && \
-    if [ $(md5sum -c anaconda.md5 | awk '{print $2}') != "OK" ] ; then echo 'invalid md5 sum'; ls -la; exit 1; fi && \
+    echo "${ANACONDA_SHA256}  anaconda.sh" > anaconda.hash && \
+    echo anaconda.hash && \
+    if [ "$(sha256sum -c anaconda.hash | awk '{print $2}')" != "OK" ] ; then echo 'invalid hash sum'; ls -la; exit 1; fi && \
     sh ./anaconda.sh -b -p ${ANACONDA_HOME} && \
-    rm anaconda.sh anaconda.md5
+    rm anaconda.sh anaconda.hash
 
 ENV \
     # TODO: think about using ${ANACONDA_HOME}/etc/profile.d/conda.sh
