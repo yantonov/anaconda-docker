@@ -28,7 +28,7 @@ Run jupiter lab
 ```
 
 Docker file provides 
-1. ubuntu 18.04
+1. ubuntu 22.04
 2. [anaconda](https://www.anaconda.com/products/individual) (check docker [file](https://github.com/yantonov/anaconda-docker/blob/master/python3/Dockerfile) to get anaconda version)
 
 Links:
