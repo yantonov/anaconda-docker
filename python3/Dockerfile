@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-MAINTAINER Yury Antonov <yantonov@fastmail.com>
+MAINTAINER Yury Antonov <1390348+yantonov@users.noreply.github.com>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
