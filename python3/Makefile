@@ -5,7 +5,7 @@ DOCKER_FILE=Dockerfile
 SRC?=$(shell pwd)
 
 IMAGE=yantonov/anaconda3
-TAG=2022.10
+TAG=2023.09
 FQN_IMAGE=$(IMAGE):$(TAG)
 CONTAINER_NAME?=$(shell echo "$(IMAGE)" | tr '/' '_')
 

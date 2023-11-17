@@ -4,8 +4,8 @@ MAINTAINER Yury Antonov <1390348+yantonov@users.noreply.github.com>
 
 ENV \
     ANACONDA_HOME=/opt/conda \
-    ANACONDA_VERSION=2022.10 \
-    ANACONDA_SHA256=e7ecbccbc197ebd7e1f211c59df2e37bc6959d081f2235d387e08c9026666acd \
+    ANACONDA_VERSION=2023.09-0 \
+    ANACONDA_SHA256=6c8a4abb36fbb711dc055b7049a23bbfd61d356de9468b41c5140f8a11abd851 \
     ANACONDA_PYTHON_VERSION=3
 
 RUN apt-get update && \
