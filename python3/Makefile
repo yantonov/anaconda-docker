@@ -14,7 +14,7 @@ CONTAINER_SRC=/src
 JUPITER_PORT=8888
 EXPOSED_JUPITER_PORT?=8888
 
-EXECUTABLE=$(shell command -v docker && echo "docker" || echo "podman")
+EXECUTABLE=$(shell command -v docker >> /dev/null 2>&1 && echo "docker" || echo "podman")
 
 build:
 	$(EXECUTABLE)  build \
