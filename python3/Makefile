@@ -14,13 +14,15 @@ CONTAINER_SRC=/src
 JUPITER_PORT=8888
 EXPOSED_JUPITER_PORT?=8888
 
+EXECUTABLE=$(shell command -v docker && echo "docker" || echo "podman")
+
 build:
-	docker build \
+	$(EXECUTABLE)  build \
 		-t "$(FQN_IMAGE)" \
 		-f "$(DOCKER_FILE)" .
 
 notebook:
-	docker run \
+	$(EXECUTABLE)  run \
 			--hostname localhost \
 			-it \
 			-p $(EXPOSED_JUPITER_PORT):$(JUPITER_PORT) \
@@ -36,7 +38,7 @@ notebook:
 			--allow-root"
 
 lab:
-	docker run \
+	$(EXECUTABLE)  run \
 			--hostname localhost \
 			-it \
 			-p $(EXPOSED_JUPITER_PORT):$(JUPITER_PORT) \
@@ -52,20 +54,20 @@ lab:
 			--allow-root"
 
 ssh:
-	docker run -it \
+	$(EXECUTABLE)  run -it \
 			--name "$(CONTAINER_NAME)" \
 			--rm \
 			"$(FQN_IMAGE)" \
 			bash
 
 stop:
-	docker stop "$(CONTAINER_NAME)"
+	$(EXECUTABLE)  stop "$(CONTAINER_NAME)"
 
 pull:
-	docker pull "$(FQN_IMAGE)"
+	$(EXECUTABLE)  pull "$(FQN_IMAGE)"
 
 push:
-	docker push "$(FQN_IMAGE)"
+	$(EXECUTABLE)  push "$(FQN_IMAGE)"
 
 uninstall:
-	docker image rm "$(FQN_IMAGE)"
+	$(EXECUTABLE)  image rm "$(FQN_IMAGE)"
