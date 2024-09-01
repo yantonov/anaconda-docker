@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 MAINTAINER Yury Antonov <1390348+yantonov@users.noreply.github.com>
 
